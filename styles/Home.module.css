@@ -94,13 +94,24 @@
   border-radius: 15px;
 }
 .card:hover {
-  color:  #eed530;
-  border-color: #eed530;
+  color:  #6d3c89;
+  border-color: #6d3c89;
 }
 .card.selected {
-  background-color: #eed530;
-  color:#11001c ;
+  background-color: #6d3c89;
+  color:#fff;
 }
+@media (prefers-color-scheme: dark) {
+  .card:hover {
+    color:  #eed530;
+    border-color: #eed530;
+  }
+  .card.selected {
+    background-color: #eed530;
+    color:#11001c ;
+  }
+}
+
 
 .card h2 {
   margin: 0 0 1rem 0;

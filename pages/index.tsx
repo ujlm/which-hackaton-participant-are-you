@@ -287,7 +287,7 @@ const Home: NextPage = () => {
               </span>
               <p>
                 Want to know more about the Belgian startup scene?<br/>
-                <button className={styles.card} style={{maxWidth:'250px'}}>Join the AFT Belgium Startup Trip &rarr;</button>
+                <button className={styles.card} style={{maxWidth:'265px'}}>Join the AFT Belgium Startup Trip &rarr;</button>
               </p>
             </div>
           )}
