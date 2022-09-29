@@ -267,6 +267,7 @@ const Home: NextPage = () => {
 
               {currentQuestion >= 0 && shuffleArray(quizData.questions[currentQuestion].answers).map((a, i) => (
                 <button
+                  key={i}
                   onClick={() => upScore(a.answerIndex)}
                   className={`${styles.card}`}
                 >
