@@ -177,8 +177,8 @@ function shuffleArray(array: any[]) {
   return array;
 }
 
-function startsWithVowel(word: string){
-  var vowels = ("aeiouAEIOU"); 
+function startsWithVowel(word: string) {
+  var vowels = ("aeiouAEIOU");
   return vowels.indexOf(word[0]) !== -1;
 }
 
@@ -195,15 +195,21 @@ const Home: NextPage = () => {
     setCurrentQuestion(0);
   }
 
-  const upScore = (index: number) => {
-    let scoreCopy = [...score];
-    scoreCopy[index] = scoreCopy[index] + 1;
-    setScore(scoreCopy);
-    if (currentQuestion < quizData.questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      getResults();
-    }
+  const upScore = (index: number, event: any) => {
+    const t = event.currentTarget;
+    t.classList.toggle(styles.selected);
+    setTimeout(function () {
+      // Show selection
+      let scoreCopy = [...score];
+      scoreCopy[index] = scoreCopy[index] + 1;
+      setScore(scoreCopy);
+      if (currentQuestion < quizData.questions.length - 1) {
+        t.classList.toggle(styles.selected);
+        setCurrentQuestion(currentQuestion + 1);
+      } else {
+        getResults();
+      }
+    }, 600);
   }
 
   const getResults = () => {
@@ -225,18 +231,23 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Quiz: {quizData.title}</title>
+        <title>Quiz: {quizData.title.toString()}</title>
         <meta name="description" content={quizData.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {
         stage !== 'intro' ?
-      <header>
-      <span>AFT Quiz: {quizData.title}</span>
-    </header>
-    :
-    <></>
-    }
+          <header>
+            <div><b>Quiz</b>: <em>{quizData.title}</em> &rarr; {
+              stage === 'questions' ?
+                <span>Question {currentQuestion + 1}/{quizData.questions.length}</span>
+                :
+                <span>Results</span>
+            }</div>
+          </header>
+          :
+          <></>
+      }
       <main className={styles.main}>
         {
           stage === 'intro' ? (
@@ -248,7 +259,8 @@ const Home: NextPage = () => {
                 {quizData.description}
               </p>
               {currentQuestion < 0 && (
-                <button onClick={startQuiz}
+                <button
+                  onClick={startQuiz}
                   className={styles.card}
                   style={{ maxWidth: '200px', fontSize: '1.5rem', textAlign: 'center' }}>Get started &rarr;</button>
               )}
@@ -268,7 +280,7 @@ const Home: NextPage = () => {
               {currentQuestion >= 0 && shuffleArray(quizData.questions[currentQuestion].answers).map((a, i) => (
                 <button
                   key={i}
-                  onClick={() => upScore(a.answerIndex)}
+                  onClick={(e: any) => upScore(a.answerIndex, e)}
                   className={`${styles.card}`}
                 >
                   <p>{a.answer}</p>
@@ -280,14 +292,14 @@ const Home: NextPage = () => {
           :
           (
             <div className={styles.result}>
-              <span style={{fontSize: '58px'}}>🎉</span>
+              <span style={{ fontSize: '58px', display: 'block', margin: '0 auto', width: '40%' }}>🎉</span>
               <h1>You are a{startsWithVowel(quizData.results[outcome].title) ? 'n' : ''} <em>{quizData.results[outcome].title}</em></h1>
               <span>
                 {quizData.results[outcome].description}
               </span>
               <p>
-                Want to know more about the Belgian startup scene?<br/>
-                <button className={styles.card} style={{maxWidth:'265px'}}>Join the AFT Belgium Startup Trip &rarr;</button>
+                Want to know more about the Belgian startup scene?<br /><br />
+                <a href='https://www.aftleuven.be/belgium-startup-trip/' className={styles.card} style={{ display: 'block', maxWidth: '265px' }}>Join the AFT Belgium Startup Trip &rarr;</a>
               </p>
             </div>
           )}
@@ -302,7 +314,7 @@ const Home: NextPage = () => {
         >
           Quiz by{' '}
           <span className={styles.logo}>
-                <Image src="/aft.svg" alt="AFT Logo" width={72} height={16} />
+            <Image src="/aft.svg" alt="AFT Logo" width={72} height={16} />
           </span>
         </a>
       </footer>

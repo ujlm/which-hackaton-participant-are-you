@@ -87,7 +87,7 @@
   cursor: pointer;
 }
 .questionWrapper, .result {
-  max-width: 80%;
+  width: 80%;
 }
 .result {
   padding: 15px;
@@ -96,6 +96,9 @@
 .card:hover {
   color:  #6d3c89;
   border-color: #6d3c89;
+}
+.card:focus, .card:active {
+  outline: none;
 }
 .card.selected {
   background-color: #6d3c89;
@@ -111,7 +114,11 @@
     color:#11001c ;
   }
 }
-
+@media screen and (max-width: 500px) {
+  .questionWrapper, .result {
+    max-width: 98%;
+  }
+}
 
 .card h2 {
   margin: 0 0 1rem 0;
@@ -150,14 +157,13 @@
 }
 
 .container header {
-  padding: 25px;
-  font-weight: bold;
-  border-radius: 0 0 15px 15px;
+  padding: 15px;
   position: absolute;
+  left: 0;right: 0;
+  border-bottom: 1px solid #fff;
 }
-.container header span {
-  font-size: 1.2rem;
-  border-radius: 9px;
+.container header div {
+  font-size: .7rem;
   line-height: 2rem;
   padding: 0 .4rem;
 }
