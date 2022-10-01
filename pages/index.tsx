@@ -87,7 +87,7 @@ const Home: NextPage = () => {
 
   const title = `Quiz: ${quizData.title.toString()}`;
   const description = `${quizData.description}`;
-  const url = "https://vercel.com/ujlm/what-type-of-founder-are-you";
+  const url = "https://what-type-of-founder-are-you.vercel.app";
   const img = "https://s6.imgcdn.dev/G0AmC.png";
 
   return (
