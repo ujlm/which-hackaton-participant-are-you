@@ -3,164 +3,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import startsWithVowel from '../helpers/startsWithVowel'
 import styles from '../styles/Home.module.css'
-
-const quizData = {
-  title: 'What type of founder are you?',
-  description: 'Find out how you approach your startup.',
-  questions: [
-    {
-      title: 'Your sugar aunt has to move this weekend, and she asks for your help. Although you already have other plans, you want to help her. What do you do?',
-      answers: [
-        {
-          answer: 'I combine her stair elevator with an old chainsaw engine so that it supports heavy loads. Now all her belongings can be automatically carried upstairs!',
-          answerIndex: 0
-        },
-        {
-          answer: 'So what I have other plans? There are 24 hours in a day: I will find some time to help move!',
-          answerIndex: 1
-        },
-        {
-          answer: 'Unfortunately, I cannot help her move but I promise to install all the furniture next Monday.',
-          answerIndex: 2
-        }
-        ,
-        {
-          answer: 'I show her a platform where she can find a student to do the job for a small fee.',
-          answerIndex: 3
-        }
-      ]
-    },
-    {
-      title: 'The Red Devils made it to the finals of the World Cup. Sadly, Thibaut Courtois got injured. Roberto Martinez asks you to replace him. What do you do?',
-      answers: [
-        {
-          answer: 'I\'m in! This is the perfect time to test out my new hydraulic keeper gloves.',
-          answerIndex: 0
-        },
-        {
-          answer: 'Simon Mignolet might be better suited for the job, but he seems a bit down. I tell him this is his moment to shine, he can do it!',
-          answerIndex: 1
-        },
-        {
-          answer: 'The solution is simple: let\'s place a brick wall inside the goal: nobody can break my sturdy construction.',
-          answerIndex: 2
-        }
-        ,
-        {
-          answer: 'I call Roberto Martinez back and tell him he shouldn\'t be asking this. Rather, he should devote his attention to the existing team, not to a random outsider.',
-          answerIndex: 3
-        }
-      ]
-    },
-    {
-      title: 'Which criminal do you most identify with? ',
-      answers: [
-        {
-          answer: 'Elisabeth Holmes',
-          answerIndex: 0
-        },
-        {
-          answer: 'Charles Manson',
-          answerIndex: 1
-        },
-        {
-          answer: 'Jordan Belfort (from The Wolf of Wall Street',
-          answerIndex: 2
-        }
-        ,
-        {
-          answer: ' I wouldn\'t be a criminal myself; I would inform criminals on how to become one',
-          answerIndex: 3
-        }
-      ]
-    },
-    {
-      title: 'Which car do you prefer? ',
-      answers: [
-        {
-          answer: 'Solar One',
-          answerIndex: 0
-        },
-        {
-          answer: 'I don\'t mind. Any car, as long as I can use it daily',
-          answerIndex: 1
-        },
-        {
-          answer: 'A tuned golf',
-          answerIndex: 2
-        }
-        ,
-        {
-          answer: 'A Mercedes-Benz',
-          answerIndex: 3
-        }
-      ]
-    },
-    {
-      title: 'What does your dream house look like?',
-      answers: [
-        {
-          answer: 'A lush tree house with a generator powered by photosynthesis',
-          answerIndex: 0
-        },
-        {
-          answer: 'A mobilhome, so I can always be on the road.',
-          answerIndex: 1
-        },
-        {
-          answer: 'A giant villa that I built from the ground up with my bare hands. ',
-          answerIndex: 2
-        }
-        ,
-        {
-          answer: ' A condo in Japanese hogyo style. I can show the architect how to approach this project.',
-          answerIndex: 3
-        }
-      ]
-    },
-    {
-      title: 'Last question: which of these companies would you prefer to work for?',
-      answers: [
-        {
-          answer: 'Google',
-          answerIndex: 0
-        },
-        {
-          answer: 'I would rather become a self-employed mental coach',
-          answerIndex: 1
-        },
-        {
-          answer: 'A small custom software development studio',
-          answerIndex: 2
-        }
-        ,
-        {
-          answer: 'McKinsey',
-          answerIndex: 3
-        }
-      ]
-    }
-  ],
-  results: [
-    {
-      title: 'inventor 💡',
-      description: 'You seek disruption, to boldly pursue a new product or business model. Famous inventors are Steve Jobs, Brian Chesky and Thomas Edison.',
-    },
-    {
-      title: 'driver 🚘',
-      description: 'Your speciality is to get the best people on board, to motivate every person in your organization to pursue the mission. Famous drivers are Angela Merkel, Richard Branson and Martin Luther King Jr.'
-    },
-    {
-      title: 'builder 🧱',
-      description: 'You gotta love the hustle. If you have a goal, you will do everything you can do to turn your dream into a reality. Famous builders are Sara Blakely, Dr Dre and Elon Musk.'
-    },
-    {
-      title: 'guide 🦮',
-      description: 'In your opinion, working better doesn\'t necessarily mean working harder. Efficiency and knowledge are your tools to improve the process of your company.'
-    }
-  ]
-};
+import quizData from './quizData.json'
+import { FacebookShareButton, LinkedinShareButton } from 'react-share';
+import FacebookIcon from 'react-share/lib/FacebookIcon'
+import LinkedinIcon from 'react-share/lib/LinkedinIcon'
+import EmailShareButton from 'react-share/lib/EmailShareButton'
+import EmailIcon from 'react-share/lib/EmailIcon'
 
 function shuffleArray(array: any[]) {
   let curId = array.length;
@@ -177,11 +27,18 @@ function shuffleArray(array: any[]) {
   return array;
 }
 
-function startsWithVowel(word: string) {
-  var vowels = ("aeiouAEIOU");
-  return vowels.indexOf(word[0]) !== -1;
-}
 
+const share = {
+  config: [{
+    facebook: {
+      socialShareUrl: 'https://peterpeterparker.io'
+    }
+  }, {
+    twitter: {
+      socialShareUrl: 'https://peterpeterparker.io'
+    }
+  }]
+};
 
 const Home: NextPage = () => {
 
@@ -228,12 +85,40 @@ const Home: NextPage = () => {
     setStage('results');
   }
 
+  const title = `Quiz: ${quizData.title.toString()}`;
+  const description = `${quizData.description}`;
+  const url = "https://vercel.com/ujlm/what-type-of-founder-are-you";
+  const img = "https://s6.imgcdn.dev/G0AmC.png";
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Quiz: {quizData.title.toString()}</title>
-        <meta name="description" content={quizData.description} />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={img} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={img} />
+
+
       </Head>
       {
         stage !== 'intro' ?
@@ -292,14 +177,36 @@ const Home: NextPage = () => {
           :
           (
             <div className={styles.result}>
-              <span style={{ fontSize: '58px', display: 'block', margin: '0 auto', width: '40%' }}>🎉</span>
+              <span style={{ fontSize: '98px', display: 'block', margin: '0 auto', width: '40%' }}>{quizData.results[outcome].emoji}</span>
               <h1>You are a{startsWithVowel(quizData.results[outcome].title) ? 'n' : ''} <em>{quizData.results[outcome].title}</em></h1>
               <span>
                 {quizData.results[outcome].description}
               </span>
+              <div className={styles.shareBlock}>
+                <h3>Share your result</h3>
+                <div>
+                  <LinkedinShareButton
+                    url={`${url}/result/${quizData.results[outcome].title}`}
+                  >
+                    <LinkedinIcon size={32} round={true} />
+                  </LinkedinShareButton>
+                  <FacebookShareButton
+                    url={`${url}/result/${quizData.results[outcome].title}`}
+                  >
+                    <FacebookIcon size={32} round={true} />
+                  </FacebookShareButton>
+                  <EmailShareButton 
+                    url={`${url}/result/${quizData.results[outcome].title}`}
+                    subject={`What type of founder are you? I am a ${quizData.results[outcome].title}`}
+                    body={`I did this test "What type of founder are you?" and apparently I am a ${quizData.results[outcome].title}. You can find out too!`}
+                  >
+                    <EmailIcon size={32} round={true} />
+                  </EmailShareButton>
+                </div>
+              </div>
               <p>
-                Want to know more about the Belgian startup scene?<br /><br />
-                <a href='https://www.aftleuven.be/belgium-startup-trip/' className={styles.card} style={{ display: 'block', maxWidth: '265px' }}>Join the AFT Belgium Startup Trip &rarr;</a>
+                If you’re a student in Belgium and interested to learn more about our startup scene, then apply for the Belgium Startup Trip happening November 3rd until November 5th.<br /><br />
+                <a href='https://www.aftleuven.be/belgium-startup-trip/' className={styles.card} style={{ display: 'block', maxWidth: '295px' }}>Join AFT Belgium Startup Trip &rarr;</a>
               </p>
             </div>
           )}

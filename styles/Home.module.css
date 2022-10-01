@@ -1,5 +1,7 @@
 .container {
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
@@ -13,6 +15,7 @@
 }
 
 .footer {
+  margin-top: auto;
   display: flex;
   flex: 1;
   padding: 2rem 0;
@@ -92,7 +95,18 @@
 .result {
   padding: 15px;
   border-radius: 15px;
+  max-width: 500px;
+  min-width: min(90vw, 500px);
+  background-color: #eaeaea;
+  color:#11001c;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
+.shareResult {
+  max-width: min(500px, 95vw);
+}
+
 .card:hover {
   color:  #6d3c89;
   border-color: #6d3c89;
@@ -118,6 +132,18 @@
   .questionWrapper, .result {
     max-width: 98%;
   }
+}
+.result .card {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  color:  #11001c;
+  border-color: #11001c;
+  background-color: transparent;
+}
+.result .card:hover {
+  color:#fff!important;
+  background-color: #11001c;
 }
 
 .card h2 {
