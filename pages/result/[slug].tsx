@@ -98,7 +98,7 @@ const Result: NextPage<any> = ({ slug, result }) => {
                                 </span>
 
                                 <p>
-                                    What type of founder are you?<br/>
+                                    Which hackaton participant are you?<br/>
                                     You can find out as well!<br /><br /><br/>
                                     <a href='https://what-type-of-founder-are-you.vercel.app/' className={styles.card} style={{ display: 'block', maxWidth: '200px', margin: '0 auto' }}>Do the quiz &rarr;</a>
                                 </p>

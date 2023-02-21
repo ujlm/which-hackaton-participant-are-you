@@ -1,168 +1,126 @@
 {
-    "title": "What type of founder are you?",
-    "description": "Find out how you approach your startup.",
-    "questions": [
-      {
-        "title": "Your sugar aunt has to move this weekend, and she asks for your help. Although you already have other plans, you want to help her. What do you do?",
-        "answers": [
-          {
-            "answer": "I combine her stair elevator with an old chainsaw engine so that it supports heavy loads. Now all her belongings can be automatically carried upstairs!",
-            "answerIndex": 0
-          },
-          {
-            "answer": "So what I have other plans? There are 24 hours in a day: I will find some time to help move!",
-            "answerIndex": 1
-          },
-          {
-            "answer": "Unfortunately, I cannot help her move but I promise to install all the furniture next Monday.",
-            "answerIndex": 2
-          }
-          ,
-          {
-            "answer": "I show her a platform where she can find a student to do the job for a small fee.",
-            "answerIndex": 3
-          }
-        ]
-      },
-      {
-        "title": "The Red Devils made it to the finals of the World Cup. Sadly, Thibaut Courtois got injured. Roberto Martinez asks you to replace him. What do you do?",
-        "answers": [
-          {
-            "answer": "I\"m in! This is the perfect time to test out my new hydraulic keeper gloves.",
-            "answerIndex": 0
-          },
-          {
-            "answer": "Simon Mignolet might be better suited for the job, but he seems a bit down. I tell him this is his moment to shine, he can do it!",
-            "answerIndex": 1
-          },
-          {
-            "answer": "The solution is simple: let's place a brick wall inside the goal: nobody can break my sturdy construction.",
-            "answerIndex": 2
-          }
-          ,
-          {
-            "answer": "I call Roberto Martinez back and tell him he shouldn\"t be asking this. Rather, he should devote his attention to the existing team, not to a random outsider.",
-            "answerIndex": 3
-          }
-        ]
-      },
-      {
-        "title": "Which criminal do you most identify with? ",
-        "answers": [
-          {
-            "answer": "Elisabeth Holmes",
-            "answerIndex": 0
-          },
-          {
-            "answer": "Charles Manson",
-            "answerIndex": 1
-          },
-          {
-            "answer": "Jordan Belfort (from The Wolf of Wall Street)",
-            "answerIndex": 2
-          }
-          ,
-          {
-            "answer": " I wouldn\"t be a criminal myself; I would inform criminals on how to become one",
-            "answerIndex": 3
-          }
-        ]
-      },
-      {
-        "title": "Which car do you prefer? ",
-        "answers": [
-          {
-            "answer": "Solar One",
-            "answerIndex": 0
-          },
-          {
-            "answer": "I don\"t mind. Any car, as long as I can use it daily",
-            "answerIndex": 1
-          },
-          {
-            "answer": "A tuned golf",
-            "answerIndex": 2
-          }
-          ,
-          {
-            "answer": "A Mercedes-Benz",
-            "answerIndex": 3
-          }
-        ]
-      },
-      {
-        "title": "What does your dream house look like?",
-        "answers": [
-          {
-            "answer": "A lush tree house with a generator powered by photosynthesis",
-            "answerIndex": 0
-          },
-          {
-            "answer": "A mobilhome, so I can always be on the road.",
-            "answerIndex": 1
-          },
-          {
-            "answer": "A giant villa that I built from the ground up with my bare hands. ",
-            "answerIndex": 2
-          }
-          ,
-          {
-            "answer": " A condo in Japanese hogyo style. I can show the architect how to approach this project.",
-            "answerIndex": 3
-          }
-        ]
-      },
-      {
-        "title": "Last question: which of these companies would you prefer to work for?",
-        "answers": [
-          {
-            "answer": "Google",
-            "answerIndex": 0
-          },
-          {
-            "answer": "I would rather become a self-employed mental coach",
-            "answerIndex": 1
-          },
-          {
-            "answer": "A small custom software development studio",
-            "answerIndex": 2
-          }
-          ,
-          {
-            "answer": "McKinsey",
-            "answerIndex": 3
-          }
-        ]
-      }
-    ],
-    "results": [
-      {
-        "title": "inventor",
-        "emoji": "💡",
-        "description": "You seek disruption, to boldly pursue a new product or business model. Famous inventors are Steve Jobs, Brian Chesky and Thomas Edison.",
-        "cover": "https://s6.imgcdn.dev/G02SS.png",
-        "me_description": "I seek disruption, to boldly pursue a new product or business model. Famous inventors are Steve Jobs, Brian Chesky and Thomas Edison. What type of founder are you?"
-      },
-      {
-        "title": "driver",
-        "emoji": "🚘",
-        "description": "Your speciality is to get the best people on board, to motivate every person in your organization to pursue the mission. Famous drivers are Angela Merkel, Richard Branson and Martin Luther King Jr.",
-        "cover": "https://s6.imgcdn.dev/G0SO2.png",
-        "me_description": "My speciality is to get the best people on board, to motivate every person in my organization to pursue the mission. What type of founder are you?"
-      },
-      {
-        "title": "builder",
-        "emoji": "🧱",
-        "description": "You gotta love the hustle. If you have a goal, you will do everything you can do to turn your dream into a reality. Famous builders are Sara Blakely, Dr Dre and Elon Musk.",
-        "cover": "https://s6.imgcdn.dev/G0rEi.png",
-        "me_description": "I love the hustle. If I have a goal, I will do everything I can do to turn my dream into a reality. What type of founder are you?"
-      },
-      {
-        "title": "guide",
-        "emoji": "🦮",
-        "description": "In your opinion, working better doesn\"t necessarily mean working harder. Efficiency and knowledge are your tools to improve the process of your company.",
-        "guide": "https://s6.imgcdn.dev/G0xQH.png",
-        "me_description": "In my opinion, working better doesn\"t necessarily mean working harder. Efficiency and knowledge are my tools to improve the process of your company. What type of founder are you?"
-      }
-    ]
-  }
+  "title": "What hackaton participant are you?",
+  "description": "Find out how you can power your team in to the hackathon",
+  "questions": [
+    {
+      "title": "Whom do you consider to be your greatest example?",
+      "answers": [
+        { "answer": "Tim Berners-Lee", "answerIndex": 0 },
+        { "answer": "Jony Ive", "answerIndex": 1 },
+        { "answer": "Oprah Winfrey", "answerIndex": 2 },
+        { "answer": "Marie Curie", "answerIndex": 3 }
+      ]
+    },
+    {
+      "title": "When you're faced with a problem, what is your typical approach?",
+      "answers": [
+        {
+          "answer": "Break the problem down into smaller parts and come up with a step-by-step solution",
+          "answerIndex": 0
+        },
+        {
+          "answer": "Brainstorm a variety of creative solutions and evaluate which one is the best fit",
+          "answerIndex": 1
+        },
+        {
+          "answer": "Analyze the problem from a business perspective and identify potential solutions that align with the company's goals",
+          "answerIndex": 2
+        },
+        {
+          "answer": "Use your specialized knowledge or skills to identify the root cause of the problem and come up with a solution",
+          "answerIndex": 3
+        }
+      ]
+    },
+    {
+      "title": "What's your favorite meal?",
+      "answers": [
+        { "answer": "A hot cup of instant noodles", "answerIndex": 0 },
+        {
+          "answer": "A colorful poké bowl with a unique IPA and home made blueberry-carrot muffins",
+          "answerIndex": 1
+        },
+        {
+          "answer": "Huel, Soylent or other nutritious powder shakes",
+          "answerIndex": 2
+        },
+        {
+          "answer": "It's important to keep in mind that a healthy and balanced diet is essential for optimal physical and mental health, so while it's okay to indulge in our favorite meals from time to time, it's important to do so in moderation and with a sense of mindfulness.",
+          "answerIndex": 3
+        }
+      ]
+    },
+    {
+      "title": "How do you approach learning new skills?",
+      "answers": [
+        {
+          "answer": "I prefer to learn by doing and solving problems",
+          "answerIndex": 0
+        },
+        {
+          "answer": "I prefer to learn through experimentation and creativity",
+          "answerIndex": 1
+        },
+        {
+          "answer": "I prefer to learn through mentorship and guidance from experienced professionals",
+          "answerIndex": 2
+        },
+        {
+          "answer": "I prefer to learn through specialized training or courses that focus on a specific area",
+          "answerIndex": 3
+        }
+      ]
+    },
+    {
+      "title": "What motivates you the most?",
+      "answers": [
+        {
+          "answer": "Solving complex technical problems and creating something new",
+          "answerIndex": 0
+        },
+        {
+          "answer": "Bringing a unique creative vision to life",
+          "answerIndex": 1
+        },
+        {
+          "answer": "Building a successful business and achieving financial success",
+          "answerIndex": 2
+        },
+        {
+          "answer": "Applying your specialized knowledge and skills to make a meaningful impact",
+          "answerIndex": 3
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "title": "The Developer",
+      "emoji": "💻",
+      "description": "You're someone who enjoys coding and you have a strong technical background. You may be well-suited to take on the role of the Developer in a hackathon team. You'll be responsible for creating and testing new software solutions, and you may prefer to focus on the technical aspects of the project rather than the design or business elements.",
+      "cover": "",
+      "me_description": "I am someone who enjoys coding and I have a strong technical background. I may be well-suited to take on the role of the Developer in a hackathon team. I'll be responsible for creating and testing new software solutions, and I may prefer to focus on the technical aspects of the project rather than the design or business elements."
+    },
+    {
+      "title": "The Designer",
+      "emoji": "🎨",
+      "description": "You're a creative and outgoing individual with experience in graphic design or user experience. The role of the Designer may be a good fit for you. You'll be responsible for creating the visual and user interface elements of the project, and you'll have the opportunity to bring your unique sense of style and creativity to the table.",
+      "cover": "",
+      "me_description": "I am a creative and outgoing individual with experience in graphic design or user experience. The role of the Designer may be a good fit for me. I'll be responsible for creating the visual and user interface elements of the project, and I'll have the opportunity to bring my unique sense of style and creativity to the table."
+    },
+    {
+      "title": "The Entrepreneur",
+      "emoji": "🚀",
+      "description": "You're someone who is passionate about business development and has experience in startups or marketing. The Entrepreneur role may be a good fit for you. You'll be focused on finding ways to turn the project into a viable product or service, and you'll be responsible for developing a marketing strategy and identifying potential customers.",
+      "cover": "",
+      "me_description": "I am someone who is passionate about business development and has experience in startups or marketing. The Entrepreneur role may be a good fit for me. I'll be focused on finding ways to turn the project into a viable product or service, and I'll be responsible for developing a marketing strategy and identifying potential customers."
+    },
+    {
+      "title": "The Expert",
+      "emoji": "📄",
+      "description": "You have specialized knowledge or skills in a particular area, such as subject matter expertise or experience with a specific technology or tool. The Expert role may be a good fit for you. You'll be brought onto the team specifically to help solve a particular problem or challenge, and your expertise will be invaluable in helping the team develop a successful project.",
+      "cover": "",
+      "me_description": "I have specialized knowledge or skills in a particular area, such as subject matter expertise or experience with a specific technology or tool. The Expert role may be a good fit for me. I'll be brought onto the team specifically to help solve a particular problem or challenge, and my expertise will be invaluable in helping the team develop a successful project."
+    }
+  ]
+}

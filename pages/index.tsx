@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react'
 import startsWithVowel from '../helpers/startsWithVowel'
 import styles from '../styles/Home.module.css'
@@ -31,11 +30,11 @@ function shuffleArray(array: any[]) {
 const share = {
   config: [{
     facebook: {
-      socialShareUrl: 'https://peterpeterparker.io'
+      socialShareUrl: ''
     }
   }, {
     twitter: {
-      socialShareUrl: 'https://peterpeterparker.io'
+      socialShareUrl: ''
     }
   }]
 };
@@ -87,8 +86,8 @@ const Home: NextPage = () => {
 
   const title = `Quiz: ${quizData.title.toString()}`;
   const description = `${quizData.description}`;
-  const url = "https://what-type-of-founder-are-you.vercel.app";
-  const img = "https://s6.imgcdn.dev/G0AmC.png";
+  const url = "https://which-hackaton-participant-are-you.vercel.app";
+  const img = url + "/images/banner.webp";
 
   return (
     <div className={styles.container}>
@@ -197,16 +196,16 @@ const Home: NextPage = () => {
                   </FacebookShareButton>
                   <EmailShareButton 
                     url={`${url}/result/${quizData.results[outcome].title}`}
-                    subject={`What type of founder are you? I am a ${quizData.results[outcome].title}`}
-                    body={`I did this test "What type of founder are you?" and apparently I am a ${quizData.results[outcome].title}. You can find out too!`}
+                    subject={`Which hackaton participant are you? I am a ${quizData.results[outcome].title}`}
+                    body={`I did this test "Which hackaton participant are you?" and apparently I am a ${quizData.results[outcome].title}. You can find out too!`}
                   >
                     <EmailIcon size={32} round={true} />
                   </EmailShareButton>
                 </div>
               </div>
               <p>
-                If you’re a student in Belgium and interested to learn more about our startup scene, then apply for the Belgium Startup Trip happening November 3rd until November 5th.<br /><br />
-                <a href='https://www.aftleuven.be/belgium-startup-trip/' className={styles.card} style={{ display: 'block', maxWidth: '295px' }}>Join AFT Belgium Startup Trip &rarr;</a>
+              Academics for Technology is super excited to be organizing Belgium’s most epic hackathon this year. Are you interested to innovate, co-create and learn? Then our hackathon is something for you! It will take place in OHL on 10th-11th March 2023!<br /><br />
+                <a href='https://www.aftleuven.be/holy-hack/' className={styles.card} style={{ display: 'block', maxWidth: '295px' }}>Register for AFT Holy Hack &rarr;</a>
               </p>
             </div>
           )}
