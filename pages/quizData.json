@@ -98,28 +98,28 @@
       "title": "The Developer",
       "emoji": "💻",
       "description": "You're someone who enjoys coding and you have a strong technical background. You may be well-suited to take on the role of the Developer in a hackathon team. You'll be responsible for creating and testing new software solutions, and you may prefer to focus on the technical aspects of the project rather than the design or business elements.",
-      "cover": "",
+      "cover": "https://which-hackaton-participant-are-you.vercel.app/images/developer.webp",
       "me_description": "I am someone who enjoys coding and I have a strong technical background. I may be well-suited to take on the role of the Developer in a hackathon team. I'll be responsible for creating and testing new software solutions, and I may prefer to focus on the technical aspects of the project rather than the design or business elements."
     },
     {
       "title": "The Designer",
       "emoji": "🎨",
       "description": "You're a creative and outgoing individual with experience in graphic design or user experience. The role of the Designer may be a good fit for you. You'll be responsible for creating the visual and user interface elements of the project, and you'll have the opportunity to bring your unique sense of style and creativity to the table.",
-      "cover": "",
+      "cover": "https://which-hackaton-participant-are-you.vercel.app/images/designer.webp",
       "me_description": "I am a creative and outgoing individual with experience in graphic design or user experience. The role of the Designer may be a good fit for me. I'll be responsible for creating the visual and user interface elements of the project, and I'll have the opportunity to bring my unique sense of style and creativity to the table."
     },
     {
       "title": "The Entrepreneur",
       "emoji": "🚀",
       "description": "You're someone who is passionate about business development and has experience in startups or marketing. The Entrepreneur role may be a good fit for you. You'll be focused on finding ways to turn the project into a viable product or service, and you'll be responsible for developing a marketing strategy and identifying potential customers.",
-      "cover": "",
+      "cover": "https://which-hackaton-participant-are-you.vercel.app/images/entrepreneur.webp",
       "me_description": "I am someone who is passionate about business development and has experience in startups or marketing. The Entrepreneur role may be a good fit for me. I'll be focused on finding ways to turn the project into a viable product or service, and I'll be responsible for developing a marketing strategy and identifying potential customers."
     },
     {
       "title": "The Expert",
       "emoji": "📄",
       "description": "You have specialized knowledge or skills in a particular area, such as subject matter expertise or experience with a specific technology or tool. The Expert role may be a good fit for you. You'll be brought onto the team specifically to help solve a particular problem or challenge, and your expertise will be invaluable in helping the team develop a successful project.",
-      "cover": "",
+      "cover": "https://which-hackaton-participant-are-you.vercel.app/images/expert.webp",
       "me_description": "I have specialized knowledge or skills in a particular area, such as subject matter expertise or experience with a specific technology or tool. The Expert role may be a good fit for me. I'll be brought onto the team specifically to help solve a particular problem or challenge, and my expertise will be invaluable in helping the team develop a successful project."
     }
   ]
