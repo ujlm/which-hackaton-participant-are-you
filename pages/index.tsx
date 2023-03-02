@@ -183,7 +183,6 @@ const Home: NextPage = () => {
               </span>
               <div className={styles.shareBlock}>
                 <h3>Share your result</h3>
-                {`${url}/result/${quizData.results[outcome].title.replace(/ /g, '-')}`}
                 <div>
                   <LinkedinShareButton
                     url={`${url}/result/${quizData.results[outcome].title.replace(/ /g, '-')}`}
