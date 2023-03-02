@@ -183,21 +183,22 @@ const Home: NextPage = () => {
               </span>
               <div className={styles.shareBlock}>
                 <h3>Share your result</h3>
+                {`${url}/result/${quizData.results[outcome].title.replace(/ /g, '-')}`}
                 <div>
                   <LinkedinShareButton
-                    url={`${url}/result/${quizData.results[outcome].title}`}
+                    url={`${url}/result/${quizData.results[outcome].title.replace(/ /g, '-')}`}
                   >
                     <LinkedinIcon size={32} round={true} />
                   </LinkedinShareButton>
                   <FacebookShareButton
-                    url={`${url}/result/${quizData.results[outcome].title}`}
+                    url={`${url}/result/${quizData.results[outcome].title.replace(/ /g, '-')}`}
                   >
                     <FacebookIcon size={32} round={true} />
                   </FacebookShareButton>
                   <EmailShareButton 
                     url={`${url}/result/${quizData.results[outcome].title}`}
-                    subject={`Which hackaton participant are you? I am a ${quizData.results[outcome].title}`}
-                    body={`I did this test "Which hackaton participant are you?" and apparently I am a ${quizData.results[outcome].title}. You can find out too!`}
+                    subject={`Which hackaton participant are you? I am ${quizData.results[outcome].title}`}
+                    body={`I did this test "Which hackaton participant are you?" and apparently I am ${quizData.results[outcome].title}. You can find out too!`}
                   >
                     <EmailIcon size={32} round={true} />
                   </EmailShareButton>

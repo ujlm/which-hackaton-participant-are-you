@@ -12,19 +12,19 @@ export const getServerSideProps: GetServerSideProps = async (context: GetServerS
     let index = 0
 
     switch (slug) {
-        case 'inventor':
+        case 'The-Developer':
             index = 0;
             break;
 
-        case 'driver':
+        case 'The-Designer':
             index = 1;
             break;
 
-        case 'builder':
+        case 'The-Entrepreneur':
             index = 2;
             break;
 
-        case 'guide':
+        case 'The-Expert':
             index = 3;
             break;
     }
@@ -53,9 +53,9 @@ export const getServerSideProps: GetServerSideProps = async (context: GetServerS
 
 const Result: NextPage<any> = ({ slug, result }) => {
 
-    const title = `I am a${startsWithVowel(result.title) ? 'n' : ''} ${result.title}`;
+    const title = `I am ${result.title}`;
     const description = result.me_description;
-    const url = `https://what-type-of-founder-are-you.vercel.app/result/${slug}`;
+    const url = `https://which-hackaton-participant-are-you.vercel.app/result/${slug}`;
     const img = result.cover;
 
     return (
@@ -91,7 +91,7 @@ const Result: NextPage<any> = ({ slug, result }) => {
                         <main style={{ maxWidth: 'calc(500px, 95vw)', margin: '0 auto', textAlign: 'center' }}>
                             <div className={styles.shareResult} style={{marginTop:'50px', marginBottom:'50px'}}>
                                 <span style={{ fontSize: '88px', display: 'block', margin: '0 auto', width: '40%' }}>{result.emoji}</span>
-                                <h1>I am a{startsWithVowel(result.title) ? 'n' : ''} <em>{result.title}</em></h1>
+                                <h1>I am <em>{result.title}</em></h1>
                                 <span>
                                     I did this quiz to finds out what type of founder I am.<br/>
                                     {description.split('. What')[0]}<br/>
@@ -100,7 +100,7 @@ const Result: NextPage<any> = ({ slug, result }) => {
                                 <p>
                                     Which hackaton participant are you?<br/>
                                     You can find out as well!<br /><br /><br/>
-                                    <a href='https://what-type-of-founder-are-you.vercel.app/' className={styles.card} style={{ display: 'block', maxWidth: '200px', margin: '0 auto' }}>Do the quiz &rarr;</a>
+                                    <a href='https://which-hackaton-participant-are-you.vercel.app/' className={styles.card} style={{ display: 'block', maxWidth: '200px', margin: '0 auto' }}>Do the quiz &rarr;</a>
                                 </p>
                             </div>
                         </main>
