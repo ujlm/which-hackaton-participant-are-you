@@ -177,7 +177,7 @@ const Home: NextPage = () => {
           (
             <div className={styles.result}>
               <span style={{ fontSize: '98px', display: 'block', margin: '0 auto', width: '40%' }}>{quizData.results[outcome].emoji}</span>
-              <h1>You are a{startsWithVowel(quizData.results[outcome].title) ? 'n' : ''} <em>{quizData.results[outcome].title}</em></h1>
+              <h1>You are <em>{quizData.results[outcome].title}</em></h1>
               <span>
                 {quizData.results[outcome].description}
               </span>
